@@ -32,8 +32,8 @@ oc projects
 # Switch projects
 oc project <project name>
 
-
-Users Login Logout Cheat Sheet 
+#--------------------------------------
+# Users Login Logout Cheat Sheet 
 
 # Uses the pre-configured OpenShift cluster
 oc login
@@ -45,7 +45,8 @@ oc loing -u developer https://api.crc.testing:6443
 # Log out
 oc logout
 
-Pod Explain Field Cheat Sheet
+#--------------------------------------
+# Pod Explain Field Cheat Sheet
 
 # Get details on the pod's spec
 oc explain pod.spec
@@ -56,3 +57,40 @@ oc explain pod.spec.containers
 # You can use this oc explain command to get info about any of the other fields in a Pod
 
 
+oc create -f pods/pod.yaml
+
+oc get pods
+
+#--------------------------------------
+# Get POD Shell
+
+# oc rsh will work with any Pod name 
+# We used "hello-world-pod" in this lesson.
+oc rsh <pod name>
+
+# Check the API on port 8080
+wget localhost:8080
+
+# Exit the rsh session
+exit
+#--------------------------------------
+# POD delete or stop pod commands
+# Delete an OpenShift resource
+oc delete <resource type> <resource name>
+
+# Delete the pod for this lesson
+oc delete pod hello-world-pod
+
+
+#--------------------------------------
+# Watch live updates to pods
+oc get pods --watch
+
+#--------------------------------------
+Port forward to the port of POD
+
+
+oc port-forward pod/my-espanol-hello-world-pod 8080
+oc get pods
+oc describe pod/my-espanol-hello-world-pod
+curl localhost:8080
