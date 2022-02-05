@@ -1,0 +1,58 @@
+Code Ready Container Cheat Sheet
+
+Users Cheat Sheet:
+
+# Log in, log out
+
+# Uses the pre-configured OpenShift cluster
+oc login 
+
+# Allows you to log in to any OpenShift cluster
+oc login <cluster address>
+oc login -u developer https://api.crc.testing:6443
+
+# See who is logged in
+oc whoami
+
+# Log out
+oc logout
+
+
+# Project Basics
+
+# See current project
+oc project
+
+# Create a new project
+oc new-project demo-project
+
+# List all projects
+oc projects
+
+# Switch projects
+oc project <project name>
+
+
+Users Login Logout Cheat Sheet 
+
+# Uses the pre-configured OpenShift cluster
+oc login
+
+# Allows you to log in to any OpenShift cluster
+oc login <cluster address>
+oc loing -u developer https://api.crc.testing:6443
+
+# Log out
+oc logout
+
+Pod Explain Field Cheat Sheet
+
+# Get details on the pod's spec
+oc explain pod.spec
+
+# Get details on the pod's containers
+oc explain pod.spec.containers
+
+# You can use this oc explain command to get info about any of the other fields in a Pod
+
+
